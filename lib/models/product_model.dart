@@ -20,10 +20,10 @@ class ProductModel {
     return ProductModel(
       rating: RatingModel.fromJson(json['rating']),
       description: json['description'],
-      id:json['id'],
+      id: json['id'],
       category: json['category'],
       image: json['image'],
-      price: json['price'],
+      price: json['price'].toDouble(),
       title: json['title'],
     );
   }
@@ -34,6 +34,6 @@ class RatingModel {
   final int count;
   RatingModel({required this.count, required this.rate});
   factory RatingModel.fromJson(Map<String, dynamic> json) {
-    return RatingModel(count: json['count'], rate: json['rate']);
+    return RatingModel(count: json['count'], rate: json['rate'].toDouble());
   }
 }

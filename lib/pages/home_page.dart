@@ -3,10 +3,23 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/services/all_prodacts_services.dart';
 import 'package:store_app/widgets/custom_card.dart';
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
   static String id = 'Home Page';
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late Future<List<ProductModel>> productsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    productsFuture = AllProdactsService().getAllProducts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +35,7 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, top: 65),
         child: FutureBuilder<List<ProductModel>>(
-          future: AllProdactsService().getAllProducts(),
+          future: productsFuture, 
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List<ProductModel> products = snapshot.data!;
@@ -38,6 +51,13 @@ class HomePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return CustomCard(product: products[index]);
                 },
+              );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Text(
+                  'Error: ${snapshot.error}',
+                  style: TextStyle(color: Colors.red, fontSize: 18),
+                ),
               );
             } else {
               return Center(child: CircularProgressIndicator());
