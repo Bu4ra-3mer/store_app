@@ -1,16 +1,27 @@
-# store_app
+# store_app 🛍️
 
-A new Flutter project.
+A Flutter application for showcasing products with a clean and simple UI.
 
-## Getting Started
+## 📱 App Demo
+https://github.com/user-attachments/assets/81adf8b3-7498-486d-bc28-9cfbd42d73fd
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
+- Clean UI
+- Product listing fetched from APIs
+- Smooth navigation between pages
+- Built with Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Technologies Used
+- Flutter
+- Dart
+- Dio (for API calls)
+- Navigation (Flutter built-in)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🔌 APIs & Services Used
+- **Product APIs**: Fetches product data for listing.
+
+## 📦 Getting Started
+This project is a Flutter application.
 
 For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[online documentation](https://docs.flutter.dev/).
