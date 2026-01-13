@@ -1,4 +1,4 @@
-# store_app 🛍️
+# store_app 
 
 A Flutter application for showcasing products with a clean and simple UI.
 
@@ -20,8 +20,3 @@ https://github.com/user-attachments/assets/81adf8b3-7498-486d-bc28-9cfbd42d73fd
 ## 🔌 APIs & Services Used
 - **Product APIs**: Fetches product data for listing.
 
-## 📦 Getting Started
-This project is a Flutter application.
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/).
